@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Map</title>
+  <link href="style/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="flex-container">
+    <div class="searchView" id="searchView">
+      <div class="nav list-group">
+        <div class="input">
+          <input type="text" class="form-control boxy" id="place-filter-input" placeholder="Search.." data-bind="textInput: filterValue" name="srch-term"/>
+        </div>
+        <ul class="nav nav-stacked" data-bind="foreach: placeList">
+          <li class="nav-justified">
+            <button type="button" class="boxy place-list-btn" data-bind="visible: $data.visible, attr: {id: $data.id}, text: $data.title, click: $parent.triggerMap"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="full-map" id="map-area">
+      <div id="map">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <script src="jquery-1.12.0.min.js"></script>
+    <script src="knockout-3.4.0.js"></script>
+    <script src="js/m.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD7C9uGbg7iHg53lmERLruEukoAcfDvBI&callback=initGoogleMap" onerror="googleError()" async defer></script>
+  </footer>
+</body>
+
+</html>
