@@ -1,11 +1,14 @@
-#Archade Game Clone
+Arcade Game Project: Frogger
+===============================
+This is Project 3 in Frond-End Developer Nanodegree program from Udacity. The project utilizes concepts learned from [Object-Oriented JavaScript](https://www.udacity.com/course/viewer#!/c-ud015-nd) and [HTML5 Canvas](https://www.udacity.com/course/viewer#!/c-ud292-nd) courses.
 
-In this game you have a player and a path to reach, but there are some difficulties. you have to overcome your ememies i.e **bugs** in this case.your goal is to reach the water without colliding into any one of the enemies. you can move up, down, right, left, but if you collide with any of the bugs , the game will me reset and you will again reach to the starting position.
+### HOW TO PLAY
 
-1. how to run the game
-
-```
-just open the file `index.html`..
-you are good to go..enjoy!
- ```
+###Game Instructions:
+* Move up: up arrow
+* Move down: down arrow
+* Move left: left arrow
+* Move right: right arrow
+* Reach the water
+* Avoid the bugs
 
