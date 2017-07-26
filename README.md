@@ -19,5 +19,5 @@ Adequate for Complete Beginners.
 * Latest Web Practices
 * & Many More...
 
-#### NanoDegree Certificate
+#### Nano Degree Certificate
 ![Certificate](Certificate.PNG)
