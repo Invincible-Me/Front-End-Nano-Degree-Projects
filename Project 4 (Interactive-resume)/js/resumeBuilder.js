@@ -1,6 +1,4 @@
-	/*
-	This is empty on purpose! Your code to build the resume will go here.
-	 */var bio = {
+	var bio = {
 		"name" : "Raunak Singh",
 		"role" : "Web Developer",
 		"contacts" : {
@@ -81,24 +79,27 @@
 
 	bio.display = function() {
 	   
-	    $("#header").append(HTMLheaderName.replace("%data%", bio.name));
-		$("#header").append(HTMLheaderRole.replace("%data%", bio.role));
-	    $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-	    $("#header").append(HTMLbioPic.replace("%data%" , "images/fry.jpg"));
+    $("#header").prepend(HTMLbioPic.replace("%data%", bio.biopic));
+    $("#header").prepend(HTMLheaderName.replace("%data%", bio.name), HTMLheaderRole.replace("%data%", bio.role));
 
-	    
-	    $("#topContacts, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-	    $("#topContacts, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-	    $("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-	    $("#topContacts, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-	    $("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+    formattedContactInfo = [];
+    formattedContactInfo.push(HTMLmobile.replace('%data%', bio.contacts.mobile));
+    formattedContactInfo.push(HTMLemail.replace('%data%', bio.contacts.email));
+    formattedContactInfo.push(HTMLgithub.replace('%data%', bio.contacts.github));
+    formattedContactInfo.push(HTMLtwitter.replace('%data%', bio.contacts.twitter));
+    formattedContactInfo.push(HTMLlocation.replace('%data%', bio.contacts.location));
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+        for (var i in bio.skills) {
+            $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+        }
+    }
 
-	      $("#header").append(HTMLskillsStart);
-		 for (var i = 0; i < bio.skills.length ; i++) {
-			var formattedSkill = HTMLskills.replace("%data%" , bio.skills[i]);
-			    $("#skills").append(formattedSkill);
-
-		}
+    for (i in formattedContactInfo) {
+        $("#topContacts").append(formattedContactInfo[i]);
+        $("#footerContacts").append(formattedContactInfo[i]);
+    }
 
 	};
 	   bio.display();
@@ -185,6 +186,12 @@
    
 
       $("#mapDiv").append(googleMap);
+
+
+
+   
+
+
 
 
 
