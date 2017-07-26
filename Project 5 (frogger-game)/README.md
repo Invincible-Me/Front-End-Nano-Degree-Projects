@@ -4,7 +4,7 @@ This is Project 3 in Frond-End Developer Nanodegree program from Udacity. The pr
 
 ### HOW TO PLAY
 
-###Game Instructions:
+### Game Instructions:
 * Move up: up arrow
 * Move down: down arrow
 * Move left: left arrow
