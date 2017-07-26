@@ -20,4 +20,4 @@ Adequate for Complete Beginners.
 * & Many More...
 
 #### NanoDegree Certificate
-![Certificate](Certificate.png)
+![Certificate](Certificate.PNG)
