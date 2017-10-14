@@ -2,15 +2,15 @@
 		"name" : "Raunak Singh",
 		"role" : "Web Developer",
 		"contacts" : {
-			"mobile" : "9999999999",
-			"email" : "raunak@udacity.com",
+			"mobile" : "8802216369",
+			"email" : "invincibleme.404@gmail.com",
 			"github" : "invincible-Me",
-			"twitter" : "@raunak",
+			"twitter" : "@RaunakS47409218",
 			"location" : "India"
 		},
-		"skills" :["HTML", "swimming", "css", "Batman"],
+		"skills" :["HTML", "Java Script", "css", "Bootstrap","Swimming"],
 		"welcomeMessage": "Welcome to Raunak's resume Site ",
-		"biopic" : "images/fry.jpg"
+		"biopic" : "images/fry.JPG"
 	};
 
 	var education = {
@@ -37,31 +37,10 @@
 	  "jobs": [
 	    {
 	      "employer": "Udacity",
-	      "title": "Course Developer",
-	      "location": "Mountain View, CA",
-	      "dates": "Feb 2014 - Current",
-	      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-	    },
-	    {
-	      "employer": "LearnBIG",
-	      "title": "Software Engineer",
-	      "location": "Seattle, WA",
-	      "dates": "May 2013 - Jan 2014",
-	      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-	    },
-	    {
-	      "employer": "LEAD Academy Charter High School",
-	      "title": "Science Teacher",
-	      "location": "Nashville, TN",
-	      "dates": "Jul 2012 - May 2013",
-	      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-	    },
-	    {
-	      "employer": "Stratford High School",
-	      "title": "Science Teacher",
-	      "location": "Nashville, TN",
-	      "dates": "Jun 2009 - Jun 2012",
-	      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+	      "title": "Mentor",
+	      "location": "India",
+	      "dates": "July 2017 - Current",
+	      "description": "I guide Udacity Nanodegree enrolled students on how to achieve their desired goals."
 	    }
 	  ]
 	};
@@ -69,10 +48,16 @@
 	var projects = {
 		"projects": [
 		{
-			"title": "sample project 1",
+			"title": "Frogger Game",
 			"dates" : "2017",
-			"description" : "Who moved my cheese feet cauliflower cheese. Queso taleggio when cheese comes out everybody's happy airedale ricotto cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frails airedale swiss cheesecake.",
-			"images" : ["images/2.jpg" ]
+			"description" : "Its a simple game in which a boy try to cross path avoiding moving bugs",
+			"images" : ["images/2.png" ]
+		},
+		{
+			"title": "Neighbourhood Map",
+			"dates" : "2017",
+			"description" : "Its a friendly map which includes famous places and their description",
+			"images" : ["images/1.png" ]
 		}
 		]
 	};
@@ -120,29 +105,19 @@
 	};
 	 work.display();
 
+	projects.display = function() {
+    for (project in projects.projects) {
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[project].title), HTMLprojectDates.replace("%data%", projects.projects[project].dates) + HTMLprojectDescription.replace("%data%", projects.projects[project].description));
 
+        if (projects.projects[project].images.length > 0) {
+            for (var image in projects.projects[project].images)
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
+        }
+    }
+};
 
-	     projects.display = function() {
-	    	for (var i=0 ; i<projects.projects.length ; i++) {
-	     		$("#projects").append(HTMLprojectStart);
-
-	     		var pTitle = HTMLprojectTitle.replace("%data%" , projects.projects[i].title);
-	     		$(".project-entry:last").append(pTitle);
-
-	     		var pDates = HTMLprojectDates.replace("%data%" , projects.projects[i].dates);
-	     		$(".project-entry:last").append(pDates);
-
-	     		var pDescription = HTMLprojectDescription.replace("%data%" , projects.projects[i].description);
-	     		$(".project-entry:last").append(pDescription);
-                
-                for ( var j = 0 ; j < projects.projects[i].images.length ; j++) {
-	     		var pImages = HTMLprojectImage.replace("%data%" , projects.projects[j].images);
-	     		$(".project-entry:last").append(pImages);
-               }
-	     	
-	     	}
-	};
-	    projects.display();
+projects.display();
  
 
 	     education.display = function() {
