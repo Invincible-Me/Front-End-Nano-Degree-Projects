@@ -10,7 +10,7 @@
  -Added async in the script element 
  
  ### Optimization #2
- ####In views/css/style.css
+ #### In views/css/style.css
  -Added `will-change:transform;` attribute to `.mover` so that the scrolling is smooth.
 
  ### Optimization #3
