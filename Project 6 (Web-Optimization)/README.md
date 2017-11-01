@@ -3,22 +3,22 @@
 
  ## Optimization Summaries
  
- ### Optimization #1
+ ### Optimization # 1
  #### In index.html page
  -first i have changed the link attribute and added `type="text/css"`
  -I have added `media="print"` to the link element in line 14 index.html
  -Added async in the script element 
  
- ### Optimization #2
+ ### Optimization # 2
  #### In views/css/style.css
  -Added `will-change:transform;` attribute to `.mover` so that the scrolling is smooth.
 
- ### Optimization #3
+ ### Optimization # 3
  #### In JS/main.js
  - Moved `var items = document.getElementsByClassName('mover');` outside the DOM so that it is not called again and again
  -changed the no. of background pizzas to 24
 
- ### Optimization #4
+ ### Optimization # 4
  -I have optimized all images(reduced their size) , so that the page should load faster.
 
  # How to Run
